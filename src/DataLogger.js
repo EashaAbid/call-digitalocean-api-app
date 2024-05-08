@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import fs from "fs"; // Import the file system module
 
 // Logger component
 function Logger() {
@@ -11,13 +12,17 @@ function Logger() {
       const newData = Math.random() * 100; // Simulate some data
       const logEntry = { timestamp, data: newData };
       setLogs([...logs, logEntry]);
-      // You can customize this part to send logs to a server, store in local storage, etc.
-      console.log(logEntry);
+      // Write log entry to a file
+      fs.appendFileSync("logs.txt", JSON.stringify(logEntry) + "\n");
     };
 
     const interval = setInterval(logData, 2000); // Log data every 2 seconds
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => {
+      clearInterval(interval); // Cleanup on unmount
+      // Optionally, you can close the file stream if necessary
+      // fs.closeSync(fileStream);
+    };
   }, [logs]); // Depend on logs state to trigger re-renders
 
   return (

@@ -1,11 +1,11 @@
-import Logger from "./DataLogger";
+import HttpRequestToDO from "./CallSammyAPI";
 
 // App component
 function App() {
   return (
     <div className="App">
-      <h1>Continuous Logging App</h1>
-      <Logger />
+      <h1>Call Sammy API</h1>
+      <HttpRequestToDO />
     </div>
   );
 }

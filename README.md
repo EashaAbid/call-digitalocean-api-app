@@ -41,7 +41,7 @@ Click the "Call Sammy" button to initiate the HTTP call to the DigitalOcean API.
 To start testing the application, run:
 
 ```bash
-`npm test`
+npm test
 ```
 
 This launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
@@ -49,7 +49,7 @@ This launches the test runner in the interactive watch mode. See the section abo
 Run the following command to build the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
 ```bash
-`npm run build`
+npm run build
 ```
 
 When you execute this command, build is minified and the filenames include the hashes. Your app is ready to be deployed!
